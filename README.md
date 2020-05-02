@@ -109,6 +109,12 @@ git diff <filename> (muestra las modificaciones a un fichero antes de añadir al
 git diff –staged (compara ficheros entre ‘staging area’ y el ultimo ‘commit’)
 git diff <commitSHA> <commitSHA> (compara ficheros entre diferentes ‘commits’)
 ```
+Working area | Staging area | Repository
+----------------------------------------
+game* | game* | commit_1
+--------------
+index* | index | game
+ | | index
 
 ### Git log avanzado
 Hay veces en las que el comando `git log` ofrece demasiada información, pero esto se puede personalizar. Por ejemplo:
