@@ -111,13 +111,13 @@ git diff <commitSHA> <commitSHA> (compara ficheros entre diferentes â€˜commitsâ€
 ```
 Working area | Staging area | Repository
 -------------|--------------|-----------
-  |  | **commit_1**
+  |  |  |**commit_1**
 game* | game* | game
 index* | index |index
   |  |  
-  |  | **Commit_2**
-  |  | ...
-  |  | ...
+  |  |  |**Commit_2**
+  |  |  |...
+  |  |  |...
 
 
 ### Git log avanzado
