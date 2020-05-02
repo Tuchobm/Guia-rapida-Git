@@ -1,18 +1,18 @@
 # Guía rápida Git
 
-1.	Git
-2.	Instalación y configuración de Git
-3.	Comandos básicos
-   3. Git log avanzado
-4.	Administrando proyectos Git
-5.	Ramas en Git
-6.	Comandos avanzados
-   6. Como crear alias en Git
-   6. Descartar temporalmente cambios
-   6. ‘Pull’ de un solo ‘commit’
-7.	Github
-8.	Conclusiones
-9.	Agradecimientos
+- Git
+- Instalación y configuración de Git
+- Comandos básicos
+  - Git log avanzado
+- Administrando proyectos Git
+- Ramas en Git
+- Comandos avanzados
+  - Como crear alias en Git
+  - Descartar temporalmente cambios
+  - ‘Pull’ de un solo ‘commit’
+- Github
+- Conclusiones
+- Agradecimientos
 
 ## ¿Qué es Git?
 Git es una herramienta que sirve para gestionar el control de versiones. Pero ¿qué es el control de versiones? Pues es simplemente una forma de tener controlados todos los cambios que realizamos sobre cualquier tipo de archivos. Este control se puede efectuar a mano, aunque es recomendable usar una herramienta que nos facilite la vida como por ejemplo ‘git’, aunque hay muchas más.
@@ -101,13 +101,14 @@ Hay veces en las que el comando ‘git log’ ofrece demasiada información, per
 
 ```git log --online```
 
-Se imprimirá en cada linea un commit, con su identificador y el texto del ‘commit’.
+Imprimirá en cada linea un commit, con su identificador y el texto del ‘commit’.
 
 Otro parámetro bastante útil del log es el de ‘git graph’.
 
 ```git log --graph --oneline```
  
 Esto imprimirá la lista de ‘commits’ y mediante caracteres ASCII, representará el árbol con las ramas y los cambios entre ellas.
+
 También podemos filtrar los ‘commits’, por ejemplo:
 
 ```
@@ -119,7 +120,7 @@ git log -- foo.py bar.py
 Estos comandos filtrarán los ‘commits’ por autor, por fecha y por los archivos que fueron modificados respectivamente.
 
 ## Administrando proyectos git
-Ahora, imaginemos que queremos administrar un proyecto ubicado en otro servidor o en un almacén de repositorios como es Github
+Ahora, imaginemos que queremos administrar un proyecto ubicado en otro servidor o en un almacén de repositorios como es Github.
 Si queremos bajarnos el proyecto para empezar a gestionarlo lo podemos hacer usando:
 
 ```git clone https://servidor/ruta/a/los/archivos```
@@ -156,47 +157,84 @@ Si tenemos ficheros o carpetas que no queremos que se suban al repositorio, y qu
 
 ## Ramas en git
 Muy bien, pero antes has dicho que has subido los cambios a una rama, ¿qué es una rama?
+
 Las ramas sirven para llevar un control de cambios independiente en el mismo repositorio, es decir, podemos crear una rama a partir de la rama ‘base’, o rama ‘master’, con otra serie de cambios. Normalmente las ramas en ‘git’ se utilizan para asilar funcionalidades, es decir, creamos una rama con el nombre de una funcionalidad, hacemos todos los ‘commits’ que queramos y al finalizar la funcionalidad hacemos un ‘merge’ de ramas. Esto permite tener equipos trabajando independientemente a la vez en el mismo proyecto sin pisar funcionalidades. Esta estrategia se conoce como ‘git flow’. Puedes consultar más información de esto en este enlace: http://aprendegit.com/que-es-git-flow/
+
 Para listar las ramas existentes y saber cual es la rama activa usamos:
-git branch
+
+```git branch```
+
 Si queremos crear una nueva rama podemos hacerlo de dos formas:
+
+```
 git branch nombre_de_la_rama (creación)
 git checkout nombre_de_la_rama (cambio a esa rama)
+```
+
 O hacer lo mismo en un solo comando:
-git checkout -b rama_nueva
+
+```git checkout -b rama_nueva```
+
 Si queremos ver el árbol de ramas de una manera un tanto ‘grafica’ podemos hacerlo a través de:
-git log –graph –online branch1 branch2
+
+```git log –graph –online branch1 branch2```
+
 A la hora de fusionar los cambios, normalmente de una rama específica a la ‘master’, no situaremos en la rama master mediante ‘checkout’ y desde allí teclearemos:
-git merge master rama_a_fusionar
+
+```git merge master rama_a_fusionar```
+
 Al estar en la rama ‘master’ podemos omitir el nombre de esa rama, escribiendo solo:
-git merge rama_a_fusionar
+
+```git merge rama_a_fusionar```
+
 Una vez hecho esto podemos borrar la referencia a la rama fusionada, pues ahora sus ‘commits’ son alcanzable desde la rama ‘master’. Para ello haremos:
-git branch -d nombre_rama_fusionada
+
+```git branch -d nombre_rama_fusionada```
+
 Cuando hemos hecho un ‘merge’ y no sabemos cual es el ‘commit’ anterior, pero queremos ver las diferencias con nuestro último ‘commit’, podemos ejecutar:
-git show <commitSHA>
+
+```git show <commitSHA>```
+
 A la hora de fusionar ramas, suele pasar que ‘git’ no sabe que cambio se debe introducir cuando en una misma línea de código ha habido cambios en las dos ramas. Por ello ‘git’ mostrara un mensaje de conflicto. Para arreglarlo tienes que decidir que cambio quieres conservar (modificando manualmente el archivo) y volver a hacer ‘add’ y ‘commit’.
-Comandos avanzados
+
+## Comandos avanzados
 Vistos estos comandos básicos de ‘git’ toca ver algo más complejo. No son comandos muy complicados pero no son recomendables si no controlas del todo git. Para ciertas situaciones estos comandos de ‘git’ son muy útiles.
-Cómo crear alias en ‘git’
+
+### Cómo crear alias en ‘git’
 Para no tener que estar escribiendo todo el rato ‘commit’ o ‘checkout’ podemos crear alias. Los alias de ‘git’ sirven para decirle a ‘git’ que comando tiene que ejecutar para el alias que le hemos indicado. Estos son los alias más comunes, aunque puedes crear y configurar más:
+
+```
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
+```
+
 De esta forma, al escribir ‘git st’, ‘git’ ejecutará el comando git status ahorrándonos mucho tiempo.
-Descartar temporalmente cambios
+
+### Descartar temporalmente cambios
 Si estás trabajando en una rama y quieres cambiarte a otra, ‘git’ no te dejará porque tienes cambios sin guardar. Una forma de solucionar esto es haciendo un ‘commit’, pero si no queremos hacerlo lo que podemos hacer es descartar los cambios temporalmente. Para ello:
-git stash
+
+```git stash```
+
 Posteriormente si los quieres volver a la rama y recuperar los cambios, haremos:
-git stash pop
+
+```git stash pop```
+
 Este comando ‘git’ es de los más útiles para no tener que estar guardando cosas momentáneamente en otros sitios si te quieras cambiar rápido de rama.
-‘Pull’ de un solo ‘commit’
+
+### ‘Pull’ de un solo ‘commit’
 Si por cualquier motivo, necesitas hacer un ‘pull’ pero solo de un determinado ‘commit’, lo que puedes hacer es usar este comando:
-git cherry-pick <commitSHA>
-Github
-Existe una funcionalidad dentro de repositorio de Github que nos permite solicitar la inclusión de código en un repositorio que no es nuestro o que controla otra persona. Dicha funcionalidad se hace efectiva a través de ‘Pull Request’. Dicha funcionalidad se entiende mejor como la denominan en otros repositorios, haciéndolo como ‘Merge Request’, pues es mas bien eso, solicitar que fusionen tu código en la rama master.
-Conclusiones
+
+```git cherry-pick <commitSHA>```
+
+## Github
+Existe una funcionalidad dentro de repositorio de Github que nos permite solicitar la inclusión de código en un repositorio que no es nuestro o que controla otra persona. Dicha funcionalidad se hace efectiva a través de *‘Pull Request’*. Dicha funcionalidad se entiende mejor como la denominan en otros repositorios, haciéndolo como *‘Merge Request’*, pues es mas bien eso, solicitar que fusionen tu código en la rama master.
+
+## Conclusiones
 Git es una herramienta muy potente que ofrece muchísimos comandos para la gestión de versiones de nuestros proyectos. Los ‘commmits’ que he explicado son unos cuantos, me dejo muchos de ellos, pero te animo a que eches un vistazo a la documentación oficial de ‘git’ para que descubras muchos más comandos y configuraciones.
-Agradecimientos
-Este documento no es mas que una mejora de lo realizado por ‘codingpotions.com’, a quien agradezco el trabajo realizado, pues me ha ahorrado mucho trabajo de tecleo.
-Este documento surgió como resultado de un curso sobre “Git” que realicé en ‘udacity.com’, tras el cual decidí hacer un resumen de los comandos aprendidos para recordar todo mejor y tener una guía rápida a la que acudir en caso de duda.
+
+## Agradecimientos
+Este documento no es mas que una mejora de lo realizado por *‘codingpotions.com’*, a quien agradezco el trabajo realizado, pues me ha ahorrado mucho trabajo de tecleo.
+
+Este documento surgió como resultado de un curso sobre “Git” que realicé en *‘udacity.com’*, tras el cual decidí hacer un resumen de los comandos aprendidos para recordar todo mejor y tener una guía rápida a la que acudir en caso de duda.
