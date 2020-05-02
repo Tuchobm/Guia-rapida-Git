@@ -110,9 +110,9 @@ git diff –staged (compara ficheros entre ‘staging area’ y el ultimo ‘com
 git diff <commitSHA> <commitSHA> (compara ficheros entre diferentes ‘commits’)
 ```
 Working area | Staging area | Repository
-----------------------------------------
+-------------|--------------|-----------
 game* | game* | commit_1
---------------
+------|-------|
 index* | index | game
  | | index
 
