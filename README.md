@@ -1,7 +1,7 @@
 # Guía rápida Git
 
-- Git[#Que es git](#Que-es-git)
-- Instalación y configuración de Git
+- [Git](#Qué-es-git)
+- [Instalación y configuración de Git](#Instalación-y-configuración-de-Git)
 - Comandos básicos
   - Git log avanzado
 - Administrando proyectos Git
@@ -167,15 +167,15 @@ git remote
 
 Si alguien (un colaborador) hiciera un cambio desde otro sitio a este mismo repositorio, y quisiéramos actualizar el repositorio a nuestra copia local, haríamos:
 
-`
+```
 git pull origin master
-`
+```
 
 Pero, si tenemos cambios sin guardar, tenemos que guardarlos haciendo `commit`, antes de bajarnos nada. Tras ello, podemos subirlos al repositorio remoto:
 
-`
+```
 git push origin master
-`
+```
 
 Donde `origin` es la dirección del repositorio remoto y master es la rama a la que estamos subiendo los cambios.
 
@@ -183,18 +183,20 @@ En verde, saldrán las líneas que has añadido, y en rojo las que has eliminado
 
 Si tenemos ficheros o carpetas que no queremos que se suban al repositorio, y que están dentro de nuestra carpeta local de trabajo (por ejemplo, archivos de tokens, claves y usuarios, direcciones, etc.), podemos evitarlo con la creación de un fichero en el que se escribirán los nombres de dichas carpetas y ficheros a ignorar. El fichero se denominará:
 
-`
+```
 .gitignore
-`
+```
 
 ## Ramas en git
 Muy bien, pero antes has dicho que has subido los cambios a una rama, ¿qué es una rama?
 
-Las ramas sirven para llevar un control de cambios independiente en el mismo repositorio, es decir, podemos crear una rama a partir de la rama ‘base’, o rama ‘master’, con otra serie de cambios. Normalmente las ramas en ‘git’ se utilizan para asilar funcionalidades, es decir, creamos una rama con el nombre de una funcionalidad, hacemos todos los ‘commits’ que queramos y al finalizar la funcionalidad hacemos un ‘merge’ de ramas. Esto permite tener equipos trabajando independientemente a la vez en el mismo proyecto sin pisar funcionalidades. Esta estrategia se conoce como ‘git flow’. Puedes consultar más información de esto en este enlace: http://aprendegit.com/que-es-git-flow/
+Las ramas sirven para llevar un control de cambios independiente en el mismo repositorio, es decir, podemos crear una rama a partir de la rama `base`, o rama `master`, con otra serie de cambios. Normalmente las ramas en `git` se utilizan para asilar funcionalidades, es decir, creamos una rama con el nombre de una funcionalidad, hacemos todos los `commits` que queramos y al finalizar la funcionalidad hacemos un `merge` de ramas. Esto permite tener equipos trabajando independientemente a la vez en el mismo proyecto sin pisar funcionalidades. Esta estrategia se conoce como `git flow`. Puedes consultar más información de esto en este enlace: http://aprendegit.com/que-es-git-flow/
 
 Para listar las ramas existentes y saber cual es la rama activa usamos:
 
-```git branch```
+```
+git branch
+```
 
 Si queremos crear una nueva rama podemos hacerlo de dos formas:
 
@@ -205,35 +207,47 @@ git checkout nombre_de_la_rama (cambio a esa rama)
 
 O hacer lo mismo en un solo comando:
 
-```git checkout -b rama_nueva```
+```
+git checkout -b rama_nueva
+```
 
-Si queremos ver el árbol de ramas de una manera un tanto ‘grafica’ podemos hacerlo a través de:
+Si queremos ver el árbol de ramas de una manera un tanto *‘grafica’* podemos hacerlo a través de:
 
-```git log –graph –online branch1 branch2```
+```
+git log –graph –online branch1 branch2
+```
 
-A la hora de fusionar los cambios, normalmente de una rama específica a la ‘master’, no situaremos en la rama master mediante ‘checkout’ y desde allí teclearemos:
+A la hora de fusionar los cambios, normalmente de una rama específica a la `master`, no situaremos en la rama master mediante `checkout` y desde allí teclearemos:
 
-```git merge master rama_a_fusionar```
+```
+git merge master rama_a_fusionar
+```
 
-Al estar en la rama ‘master’ podemos omitir el nombre de esa rama, escribiendo solo:
+Al estar en la rama `master` podemos omitir el nombre de esa rama, escribiendo solo:
 
-```git merge rama_a_fusionar```
+```
+git merge rama_a_fusionar
+```
 
-Una vez hecho esto podemos borrar la referencia a la rama fusionada, pues ahora sus ‘commits’ son alcanzable desde la rama ‘master’. Para ello haremos:
+Una vez hecho esto podemos borrar la referencia a la rama fusionada, pues ahora sus `commits` son alcanzable desde la rama `master`. Para ello haremos:
 
-```git branch -d nombre_rama_fusionada```
+```
+git branch -d nombre_rama_fusionada
+```
 
-Cuando hemos hecho un ‘merge’ y no sabemos cual es el ‘commit’ anterior, pero queremos ver las diferencias con nuestro último ‘commit’, podemos ejecutar:
+Cuando hemos hecho un `merge` y no sabemos cual es el `commit` anterior, pero queremos ver las diferencias con nuestro último `commit`, podemos ejecutar:
 
-```git show <commitSHA>```
+```
+git show <commitSHA>
+```
 
-A la hora de fusionar ramas, suele pasar que ‘git’ no sabe que cambio se debe introducir cuando en una misma línea de código ha habido cambios en las dos ramas. Por ello ‘git’ mostrara un mensaje de conflicto. Para arreglarlo tienes que decidir que cambio quieres conservar (modificando manualmente el archivo) y volver a hacer ‘add’ y ‘commit’.
+A la hora de fusionar ramas, suele pasar que `git` no sabe que cambio se debe introducir cuando en una misma línea de código ha habido cambios en las dos ramas. Por ello `git` mostrara un mensaje de conflicto. Para arreglarlo tienes que decidir que cambio quieres conservar (modificando manualmente el archivo) y volver a hacer `add` y `commit`.
 
 ## Comandos avanzados
-Vistos estos comandos básicos de ‘git’ toca ver algo más complejo. No son comandos muy complicados pero no son recomendables si no controlas del todo git. Para ciertas situaciones estos comandos de ‘git’ son muy útiles.
+Vistos estos comandos básicos de `git` toca ver algo más complejo. No son comandos muy complicados pero no son recomendables si no controlas del todo `git`. Para ciertas situaciones estos comandos de `git` son muy útiles.
 
 ### Cómo crear alias en ‘git’
-Para no tener que estar escribiendo todo el rato ‘commit’ o ‘checkout’ podemos crear alias. Los alias de ‘git’ sirven para decirle a ‘git’ que comando tiene que ejecutar para el alias que le hemos indicado. Estos son los alias más comunes, aunque puedes crear y configurar más:
+Para no tener que estar escribiendo todo el rato `commit` o `checkout` podemos crear alias. Los alias de `git` sirven para decirle a `git` que comando tiene que ejecutar para el alias que le hemos indicado. Estos son los alias más comunes, aunque puedes crear y configurar más:
 
 ```
 git config --global alias.co checkout
@@ -242,29 +256,35 @@ git config --global alias.ci commit
 git config --global alias.st status
 ```
 
-De esta forma, al escribir ‘git st’, ‘git’ ejecutará el comando git status ahorrándonos mucho tiempo.
+De esta forma, al escribir `git st`, `git` ejecutará el comando git status ahorrándonos mucho tiempo.
 
 ### Descartar temporalmente cambios
-Si estás trabajando en una rama y quieres cambiarte a otra, ‘git’ no te dejará porque tienes cambios sin guardar. Una forma de solucionar esto es haciendo un ‘commit’, pero si no queremos hacerlo lo que podemos hacer es descartar los cambios temporalmente. Para ello:
+Si estás trabajando en una rama y quieres cambiarte a otra, `git` no te dejará porque tienes cambios sin guardar. Una forma de solucionar esto es haciendo un `commit`, pero si no queremos hacerlo lo que podemos hacer es descartar los cambios temporalmente. Para ello:
 
-```git stash```
+```
+git stash
+```
 
 Posteriormente si los quieres volver a la rama y recuperar los cambios, haremos:
 
-```git stash pop```
+```
+git stash pop
+```
 
-Este comando ‘git’ es de los más útiles para no tener que estar guardando cosas momentáneamente en otros sitios si te quieras cambiar rápido de rama.
+Este comando `git` es de los más útiles para no tener que estar guardando cosas momentáneamente en otros sitios si te quieras cambiar rápido de rama.
 
 ### ‘Pull’ de un solo ‘commit’
-Si por cualquier motivo, necesitas hacer un ‘pull’ pero solo de un determinado ‘commit’, lo que puedes hacer es usar este comando:
+Si por cualquier motivo, necesitas hacer un `pull` pero solo de un determinado `commit`, lo que puedes hacer es usar este comando:
 
-```git cherry-pick <commitSHA>```
+```
+git cherry-pick <commitSHA>
+```
 
 ## Github
 Existe una funcionalidad dentro de repositorio de Github que nos permite solicitar la inclusión de código en un repositorio que no es nuestro o que controla otra persona. Dicha funcionalidad se hace efectiva a través de **‘Pull Request’**. Dicha funcionalidad se entiende mejor como la denominan en otros repositorios, haciéndolo como **‘Merge Request’**, pues es mas bien eso, solicitar que fusionen tu código en la rama master.
 
 ## Conclusiones
-Git es una herramienta muy potente que ofrece muchísimos comandos para la gestión de versiones de nuestros proyectos. Los ‘commmits’ que he explicado son unos cuantos, me dejo muchos de ellos, pero te animo a que eches un vistazo a la documentación oficial de ‘git’ para que descubras muchos más comandos y configuraciones.
+Git es una herramienta muy potente que ofrece muchísimos comandos para la gestión de versiones de nuestros proyectos. Los `commmits` que he explicado son unos cuantos, me dejo muchos de ellos, pero te animo a que eches un vistazo a la documentación oficial de `git` para que descubras muchos más comandos y configuraciones.
 
 ## Agradecimientos
 Este documento no es mas que una mejora de lo realizado por **‘codingpotions.com’**, a quien agradezco el trabajo realizado, pues me ha ahorrado mucho trabajo de tecleo.
