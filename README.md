@@ -1,6 +1,6 @@
 # Guía rápida Git
 
-- Git[#Que es git](#Que es git)
+- Git[#Que es git](#Que-es-git)
 - Instalación y configuración de Git
 - Comandos básicos
   - Git log avanzado
@@ -30,31 +30,31 @@ git config --global user.email ejemplo@example.com
 ```
 
 ### Comandos básicos
-Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar ``git`` para llevar el control de estos cambios por si queremos revertirlos.
+Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar `git` para llevar el control de estos cambios por si queremos revertirlos.
 
-El primer paso es abrir la terminal de ```git```, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
+El primer paso es abrir la terminal de `git`, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
 
 ```
 git init
 ```
 
-Con este comando de ‘git’ lo que estamos haciendo es decirle a ‘git’ que este pendiente de los cambios que se produzcan en los archivos de ese directorio.
+Con este comando de `git` lo que estamos haciendo es decirle a `git` que este pendiente de los cambios que se produzcan en los archivos de ese directorio.
 
 Este comando solo lo tenemos que ejecutar una sola vez para cada proyecto que estemos realizando.
 
-Ahora podemos continuar desarrollando nuestro proyecto y, cuando queramos guardar los cambios con ‘git’ tenemos que hacer lo siguiente:
+Ahora podemos continuar desarrollando nuestro proyecto y, cuando queramos guardar los cambios con `git` tenemos que hacer lo siguiente:
 
 ```
 git status
 ```
  
-Este comando ‘git’ imprimirá el estado de los archivos, tanto los que han sido modificados como los que han sido agregados al ‘staging area’. El siguiente paso es ejecutar:
+Este comando `git` imprimirá el estado de los archivos, tanto los que han sido modificados como los que han sido agregados al `staging area`. El siguiente paso es ejecutar:
 
 ```
 git add .
 ```
 
-Con esto añadiremos al ‘staging area’ todos los archivos que aparecían anteriormente como modificados para ser guardados. Si queremos añadir un archivo o carpeta en concreto lo podemos hacer mediante:
+Con esto añadiremos al `staging area` todos los archivos que aparecían anteriormente como modificados para ser guardados. Si queremos añadir un archivo o carpeta en concreto lo podemos hacer mediante:
 
 ```
 git add NOMBREDELARCHIVO
@@ -73,13 +73,13 @@ Si finalmente queremos desahcer los cambios realizados en un archivo y devolverl
 git checkout <FILENAME>
 ```
 
-Con estos comandos hemos añadido o hemos quitado archivos al ‘staging área’ pero aún no han sido guardados, para ello:
+Con estos comandos hemos añadido o hemos quitado archivos al `staging área` pero aún no han sido guardados, para ello:
 
 ```
 git commit -m "Nombre descriptivo del cambio que hemos realizado"
 ```
 
-Acabamos de hacer nuestro primer ‘commit’. Un ‘commit’ es un guardado con mensaje de los cambios que hemos realizado en un momento determinado en nuestro proyecto. Normalmente el flujo de trabajo con ‘git’ para el día a día consiste en hacer:
+Acabamos de hacer nuestro primer `commit`. Un `commit` es un guardado con mensaje de los cambios que hemos realizado en un momento determinado en nuestro proyecto. Normalmente el flujo de trabajo con `git` para el día a día consiste en hacer:
 
 ```
 git status 	(para ver la lista de cambios)
@@ -87,7 +87,7 @@ git add 	(de todos los archivos o de los que queramos, y por último hacer)
 git commit 	(para guardar los cambios).
 ```
 
-Para imprimir todos los ‘commits’ que hemos realizado tenemos el comando:
+Para imprimir todos los `commits` que hemos realizado tenemos el comando:
 
 ```
 git log
@@ -96,10 +96,12 @@ git log -n 1 (muestra solo una línea de log)
 
 La cadena de números y letras (hash) que aparece al lado de la palabra “commit” es el identificador que podemos usar para revertir los cambios y volver atrás a ese punto. Para ello ejecutamos:
 
-```git reset --hard <commitSHA> (normalmente los cuatro primeros caracteres)```
+```
+git reset --hard <commitSHA> (normalmente los cuatro primeros caracteres)
+```
 
-Con ‘git revert’ se crea un nuevo ‘commit’ que revierte los cambios realizados en el último ‘commit’, pero no elimina dicho ‘commit’.
-Si quieres ver los cambios que has realizado desde el último ‘commit’ lo puedes hacer con:
+Con `git revert` se crea un nuevo `commit` que revierte los cambios realizados en el último `commit`, pero no elimina dicho `commit`.
+Si quieres ver los cambios que has realizado desde el último `commit` lo puedes hacer con:
 
 ```
 git diff (compara ficheros entre ‘working directory’ y ‘staging area’)
@@ -109,19 +111,23 @@ git diff <commitSHA> <commitSHA> (compara ficheros entre diferentes ‘commits�
 ```
 
 ### Git log avanzado
-Hay veces en las que el comando ‘git log’ ofrece demasiada información, pero esto se puede personalizar. Por ejemplo:
+Hay veces en las que el comando `git log` ofrece demasiada información, pero esto se puede personalizar. Por ejemplo:
 
-```git log --online```
+```
+git log --online
+```
 
-Imprimirá en cada linea un commit, con su identificador y el texto del ‘commit’.
+Imprimirá en cada linea un `commit`, con su identificador y el texto del `commit`.
 
-Otro parámetro bastante útil del log es el de ‘git graph’.
+Otro parámetro bastante útil del log es el de `git graph`.
 
-```git log --graph --oneline```
+```
+git log --graph --oneline
+```
  
-Esto imprimirá la lista de ‘commits’ y mediante caracteres ASCII, representará el árbol con las ramas y los cambios entre ellas.
+Esto imprimirá la lista de `commits` y mediante caracteres ASCII, representará el árbol con las ramas y los cambios entre ellas.
 
-También podemos filtrar los ‘commits’, por ejemplo:
+También podemos filtrar los `commits`, por ejemplo:
 
 ```
 git log --author="John"
@@ -129,43 +135,57 @@ git log --after="2014-7-1"
 git log -- foo.py bar.py
 ```
 
-Estos comandos filtrarán los ‘commits’ por autor, por fecha y por los archivos que fueron modificados respectivamente.
+Estos comandos filtrarán los `commits` por autor, por fecha y por los archivos que fueron modificados respectivamente.
 
 ## Administrando proyectos git
 Ahora, imaginemos que queremos administrar un proyecto ubicado en otro servidor o en un almacén de repositorios como es Github.
 Si queremos bajarnos el proyecto para empezar a gestionarlo lo podemos hacer usando:
 
-```git clone https://servidor/ruta/a/los/archivos```
+```
+git clone https://servidor/ruta/a/los/archivos
+```
 
 Por ejemplo, para GitHub:
 
-```git clone https://github.com/proyectogithub```
+```
+git clone https://github.com/proyectogithub
+```
 
 Posteriormente tendremos que conectarnos a ese repositorio remoto, para ello haremos:
 
-```git remote add origin https://servidor/ruta/a/los/archivos```
+```
+git remote add origin https://servidor/ruta/a/los/archivos
+```
 
-Donde la palabra ‘origin’, o la que nosotros designemos, hará referencia al repositorio remoto.
+Donde la palabra `origin`, o la que nosotros designemos, hará referencia al repositorio remoto.
 
 Para conocer saber si estamos conectados a algún repositorio y su designación, simplemente tecleamos:
 
-```git remote```
+```
+git remote
+```
 
 Si alguien (un colaborador) hiciera un cambio desde otro sitio a este mismo repositorio, y quisiéramos actualizar el repositorio a nuestra copia local, haríamos:
 
-```git pull origin master```
+`
+git pull origin master
+`
 
-Pero, si tenemos cambios sin guardar, tenemos que guardarlos haciendo ‘commit’, antes de bajarnos nada. Tras ello, podemos subirlos al repositorio remoto:
+Pero, si tenemos cambios sin guardar, tenemos que guardarlos haciendo `commit`, antes de bajarnos nada. Tras ello, podemos subirlos al repositorio remoto:
 
-```git push origin master```
+`
+git push origin master
+`
 
-Donde ‘origin’ es la dirección del repositorio remoto y master es la rama a la que estamos subiendo los cambios.
+Donde `origin` es la dirección del repositorio remoto y master es la rama a la que estamos subiendo los cambios.
 
 En verde, saldrán las líneas que has añadido, y en rojo las que has eliminado desde la última vez.
 
 Si tenemos ficheros o carpetas que no queremos que se suban al repositorio, y que están dentro de nuestra carpeta local de trabajo (por ejemplo, archivos de tokens, claves y usuarios, direcciones, etc.), podemos evitarlo con la creación de un fichero en el que se escribirán los nombres de dichas carpetas y ficheros a ignorar. El fichero se denominará:
 
-```.gitignore```
+`
+.gitignore
+`
 
 ## Ramas en git
 Muy bien, pero antes has dicho que has subido los cambios a una rama, ¿qué es una rama?
