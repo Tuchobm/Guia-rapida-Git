@@ -1,6 +1,6 @@
 # Guía rápida Git
 
-- Git
+- Git[#Que es git](#Que es git)
 - Instalación y configuración de Git
 - Comandos básicos
   - Git log avanzado
@@ -15,14 +15,14 @@
 - Agradecimientos
 
 ## ¿Qué es Git?
-Git es una herramienta que sirve para gestionar el control de versiones. Pero ¿qué es el control de versiones? Pues es simplemente una forma de tener controlados todos los cambios que realizamos sobre cualquier tipo de archivos. Este control se puede efectuar a mano, aunque es recomendable usar una herramienta que nos facilite la vida como por ejemplo ‘git’, aunque hay muchas más.
+Git es una herramienta que sirve para gestionar el control de versiones. Pero ¿qué es el control de versiones? Pues es simplemente una forma de tener controlados todos los cambios que realizamos sobre cualquier tipo de archivos. Este control se puede efectuar a mano, aunque es recomendable usar una herramienta que nos facilite la vida como por ejemplo `git`, aunque hay muchas más.
 
 ## Instalación y configuración de Git.
-Lo primero es tener instalado ‘git’ en nuestra máquina para tener acceso a todos sus comandos. Para descargar e instalar ‘git’ lo puedes hacer desde su página oficial.
+Lo primero es tener instalado `git` en nuestra máquina para tener acceso a todos sus comandos. Para descargar e instalar `git` lo puedes hacer desde su página oficial.
 
 https://git-scm.com/downloads
 
-Una vez instalado ‘git’, puedes configurar tu identidad ejecutando en la terminal:
+Una vez instalado `git`, puedes configurar tu identidad ejecutando en la terminal:
 
 ```
 git config --global user.name "Tu nombre aquí"
@@ -30,11 +30,13 @@ git config --global user.email ejemplo@example.com
 ```
 
 ### Comandos básicos
-Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar ‘git’ para llevar el control de estos cambios por si queremos revertirlos.
+Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar ``git`` para llevar el control de estos cambios por si queremos revertirlos.
 
-El primer paso es abrir la terminal de ‘git’, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
+El primer paso es abrir la terminal de ```git```, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
 
-```git init```
+```
+git init
+```
 
 Con este comando de ‘git’ lo que estamos haciendo es decirle a ‘git’ que este pendiente de los cambios que se produzcan en los archivos de ese directorio.
 
@@ -42,15 +44,21 @@ Este comando solo lo tenemos que ejecutar una sola vez para cada proyecto que es
 
 Ahora podemos continuar desarrollando nuestro proyecto y, cuando queramos guardar los cambios con ‘git’ tenemos que hacer lo siguiente:
 
-```git status```
+```
+git status
+```
  
 Este comando ‘git’ imprimirá el estado de los archivos, tanto los que han sido modificados como los que han sido agregados al ‘staging area’. El siguiente paso es ejecutar:
 
-```git add .```
+```
+git add .
+```
 
 Con esto añadiremos al ‘staging area’ todos los archivos que aparecían anteriormente como modificados para ser guardados. Si queremos añadir un archivo o carpeta en concreto lo podemos hacer mediante:
 
-```git add NOMBREDELARCHIVO```
+```
+git add NOMBREDELARCHIVO
+```
 
 Si queremos eliminar los archivos que acabamos de añadir para ser guardados lo podemos hacer con:
 
@@ -61,11 +69,15 @@ git rm NOMBREDELARCHIVO
 
 Si finalmente queremos desahcer los cambios realizados en un archivo y devolverlo a su estado original podremos utilizar el comando:
 
-```git checkout <FILENAME>```
+```
+git checkout <FILENAME>
+```
 
 Con estos comandos hemos añadido o hemos quitado archivos al ‘staging área’ pero aún no han sido guardados, para ello:
 
-```git commit -m "Nombre descriptivo del cambio que hemos realizado"```
+```
+git commit -m "Nombre descriptivo del cambio que hemos realizado"
+```
 
 Acabamos de hacer nuestro primer ‘commit’. Un ‘commit’ es un guardado con mensaje de los cambios que hemos realizado en un momento determinado en nuestro proyecto. Normalmente el flujo de trabajo con ‘git’ para el día a día consiste en hacer:
 
@@ -229,12 +241,12 @@ Si por cualquier motivo, necesitas hacer un ‘pull’ pero solo de un determina
 ```git cherry-pick <commitSHA>```
 
 ## Github
-Existe una funcionalidad dentro de repositorio de Github que nos permite solicitar la inclusión de código en un repositorio que no es nuestro o que controla otra persona. Dicha funcionalidad se hace efectiva a través de *‘Pull Request’*. Dicha funcionalidad se entiende mejor como la denominan en otros repositorios, haciéndolo como *‘Merge Request’*, pues es mas bien eso, solicitar que fusionen tu código en la rama master.
+Existe una funcionalidad dentro de repositorio de Github que nos permite solicitar la inclusión de código en un repositorio que no es nuestro o que controla otra persona. Dicha funcionalidad se hace efectiva a través de **‘Pull Request’**. Dicha funcionalidad se entiende mejor como la denominan en otros repositorios, haciéndolo como **‘Merge Request’**, pues es mas bien eso, solicitar que fusionen tu código en la rama master.
 
 ## Conclusiones
 Git es una herramienta muy potente que ofrece muchísimos comandos para la gestión de versiones de nuestros proyectos. Los ‘commmits’ que he explicado son unos cuantos, me dejo muchos de ellos, pero te animo a que eches un vistazo a la documentación oficial de ‘git’ para que descubras muchos más comandos y configuraciones.
 
 ## Agradecimientos
-Este documento no es mas que una mejora de lo realizado por *‘codingpotions.com’*, a quien agradezco el trabajo realizado, pues me ha ahorrado mucho trabajo de tecleo.
+Este documento no es mas que una mejora de lo realizado por **‘codingpotions.com’**, a quien agradezco el trabajo realizado, pues me ha ahorrado mucho trabajo de tecleo.
 
-Este documento surgió como resultado de un curso sobre “Git” que realicé en *‘udacity.com’*, tras el cual decidí hacer un resumen de los comandos aprendidos para recordar todo mejor y tener una guía rápida a la que acudir en caso de duda.
+Este documento surgió como resultado de un curso sobre “Git” que realicé en **‘udacity.com’**, tras el cual decidí hacer un resumen de los comandos aprendidos para recordar todo mejor y tener una guía rápida a la que acudir en caso de duda.
