@@ -3,26 +3,29 @@
 1.	Git
 2.	Instalación y configuración de Git
 3.	Comandos básicos
-a.	Git log avanzado
+   - Git log avanzado
 4.	Administrando proyectos Git
 5.	Ramas en Git
 6.	Comandos avanzados
-a.	Como crear alias en Git
-b.	Descartar temporalmente cambios
-c.	‘Pull’ de un solo ‘commit’
+   - Como crear alias en Git
+   - Descartar temporalmente cambios
+   - ‘Pull’ de un solo ‘commit’
 7.	Github
 8.	Conclusiones
 9.	Agradecimientos
-GIT
+
+## GIT
 Git es una herramienta que sirve para gestionar el control de versiones. Pero ¿qué es el control de versiones? Pues es simplemente una forma de tener controlados todos los cambios que realizamos sobre cualquier tipo de archivos. Este control se puede efectuar a mano, aunque es recomendable usar una herramienta que nos facilite la vida como por ejemplo ‘git’, aunque hay muchas más.
-Instalación y configuración de Git.
-Lo primero es tener instalado ‘git’ en nuestra máquina para tener acceso a todos sus comandos. Para descargar e instalar ‘git’ lo puedes hacer desde su página oficial:
-Si estás en Windows, puedes descargarlo directamente desde aquí:
+
+## Instalación y configuración de Git.
+Lo primero es tener instalado ‘git’ en nuestra máquina para tener acceso a todos sus comandos. Para descargar e instalar ‘git’ lo puedes hacer desde su página oficial.
 https://git-scm.com/downloads
 Una vez instalado ‘git’, puedes configurar tu identidad ejecutando en la terminal:
+'''
 git config --global user.name "Tu nombre aquí"
 git config --global user.email ejemplo@example.com
-Comandos básicos
+'''
+### Comandos básicos
 Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar ‘git’ para llevar el control de estos cambios por si queremos revertirlos.
 El primer paso es abrir la terminal de ‘git’, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
 git init
