@@ -2,17 +2,17 @@
 
 - [Git](#Qué-es-git)
 - [Instalación y configuración de Git](#Instalación-y-configuración-de-Git)
-- Comandos básicos
-  - Git log avanzado
-- Administrando proyectos Git
-- Ramas en Git
-- Comandos avanzados
-  - Como crear alias en Git
-  - Descartar temporalmente cambios
-  - ‘Pull’ de un solo ‘commit’
-- Github
-- Conclusiones
-- Agradecimientos
+- [Comandos básicos](#Comandos-básicos)
+  - [it log avanzado](#Git-log-avanzado)
+- [Administrando proyectos Git](#Administrando-proyectos-Git)
+- [Ramas en Git](#Ramas-en-Git)
+- [Comandos avanzados](#Comandos-avanzados)
+  - [Como crear alias en Git](#Como-crear-alias-en-Git)
+  - [Descartar temporalmente cambios](#Descartar-temporalmente-cambios)
+  - [‘Pull’ de un solo ‘commit’](#Pull-de-un-solo-commit)
+- [Github](#Github)
+- [Conclusiones](#Conclusiones)
+- [Agradecimientos](#Agradecimientos)
 
 ## ¿Qué es Git?
 Git es una herramienta que sirve para gestionar el control de versiones. Pero ¿qué es el control de versiones? Pues es simplemente una forma de tener controlados todos los cambios que realizamos sobre cualquier tipo de archivos. Este control se puede efectuar a mano, aunque es recomendable usar una herramienta que nos facilite la vida como por ejemplo `git`, aunque hay muchas más.
