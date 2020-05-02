@@ -3,7 +3,7 @@
 - [Git](#Qu茅-es-git)
 - [Instalaci贸n y configuraci贸n de Git](#Instalaci贸n-y-configuraci贸n-de-Git)
 - [Comandos b谩sicos](#Comandos-b谩sicos)
-  - [it log avanzado](#Git-log-avanzado)
+  - [Git log avanzado](#Git-log-avanzado)
 - [Administrando proyectos Git](#Administrando-proyectos-Git)
 - [Ramas en Git](#Ramas-en-Git)
 - [Comandos avanzados](#Comandos-avanzados)
@@ -111,13 +111,13 @@ git diff <commitSHA> <commitSHA> (compara ficheros entre diferentes 鈥榗ommits鈥
 ```
 Working area | Staging area | Repository
 -------------|--------------|-----------
-      |       | **commit_1**
+  |  | **commit_1**
 game* | game* | game
 index* | index |index
-      |       |    
-      |       | **Commit_2**
-      |       | ...
-      |       | ...
+  |  |  
+  |  | **Commit_2**
+  |  | ...
+  |  | ...
 
 
 ### Git log avanzado
