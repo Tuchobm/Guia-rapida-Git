@@ -3,13 +3,13 @@
 1.	Git
 2.	Instalación y configuración de Git
 3.	Comandos básicos
-   3 Git log avanzado
+   1. Git log avanzado
 4.	Administrando proyectos Git
 5.	Ramas en Git
 6.	Comandos avanzados
-   6 Como crear alias en Git
-   6 Descartar temporalmente cambios
-   6 ‘Pull’ de un solo ‘commit’
+   1. Como crear alias en Git
+   2. Descartar temporalmente cambios
+   3. ‘Pull’ de un solo ‘commit’
 7.	Github
 8.	Conclusiones
 9.	Agradecimientos
@@ -24,17 +24,17 @@ https://git-scm.com/downloads
 
 Una vez instalado ‘git’, puedes configurar tu identidad ejecutando en la terminal:
 
-'''
+```
 git config --global user.name "Tu nombre aquí"
 git config --global user.email ejemplo@example.com
-'''
+```
 
 ### Comandos básicos
 Bien, pongámonos en la situación de que tenemos un proyecto que estamos desarrollando y queremos cambiar algo drástico. Lo mejor es usar ‘git’ para llevar el control de estos cambios por si queremos revertirlos.
 
 El primer paso es abrir la terminal de ‘git’, o la terminal de nuestro sistema, para dirigirnos a la carpeta donde tengamos guardado el proyecto que estemos desarrollando, y ejecutar el siguiente comando:
 
-'''git init'''
+```git init```
 
 Con este comando de ‘git’ lo que estamos haciendo es decirle a ‘git’ que este pendiente de los cambios que se produzcan en los archivos de ese directorio.
 Este comando solo lo tenemos que ejecutar una sola vez para cada proyecto que estemos realizando.
